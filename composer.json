@@ -1,0 +1,42 @@
+{
+    "name": "ap/portal",
+    "description": "Alliance Partners Portal",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "pear/archive_tar": "1.4.7",
+        "pear/console_getopt": "1.4.2",
+        "pear/mail": "1.4.1",
+        "pear/mail_mime": "1.10.2",
+        "pear/pear": "1.10.9",
+        "pear/structures_graph": "1.1.1",
+        "pear/xml_rpc2": "1.1.4",
+        "pear/xml_util": "1.4.3",
+        "tmw/fpdm": "^2.9",
+        "mikehaertl/php-pdftk": "^0.9.0",
+
+        "ap/core": "@dev",
+        "aws/aws-sdk-php": "3.*"
+    },
+    "autoload": {
+        "classmap": [
+            "vendor/ap/core"
+        ],
+        "files" : [
+            "/var/www/customer/portal/class.ConsumerModule.php"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/home/cabemjl/sites/ws/core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": "./bin/composer-post-script.sh",
+        "post-update-cmd": "./bin/composer-post-script.sh"
+    }
+}
